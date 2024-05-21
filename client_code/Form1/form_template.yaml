@@ -18,15 +18,20 @@ components:
     layout_properties: {grid_position: 'PULZXS,GXOQNP'}
     event_bindings: {show: image_1_show}
     data_bindings: []
-  - name: file_loader_1
-    properties: {text: Camera}
-    type: FileLoader
-    layout_properties: {grid_position: 'QCWRUC,LYXQKT'}
-    data_bindings: []
+  - name: button_2
+    properties: {text: camera, icon: 'fa:video-camera'}
+    type: Button
+    layout_properties: {grid_position: 'AJAKVM,DLQYMC'}
+    event_bindings: {click: button_2_click}
+  - name: button_1
+    properties: {text: capture, icon: 'fa:save'}
+    type: Button
+    layout_properties: {grid_position: 'ZOBYFK,LWRIEM'}
+    event_bindings: {click: button_1_click}
   - name: text_box_1
     properties: {text: 'Please place the tray in the centeer of the screen. ', bold: true}
     type: TextBox
-    layout_properties: {grid_position: 'TKHVVY,LHYPEZ'}
+    layout_properties: {grid_position: 'EKPZOT,HCXROK'}
     event_bindings: {pressed_enter: text_box_1_pressed_enter}
 - name: label_1
   properties: {text: Demo-tool}
