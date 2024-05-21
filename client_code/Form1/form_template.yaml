@@ -12,12 +12,6 @@ components:
   name: Web
   layout_properties: {slot: default}
   components:
-  - name: image_1
-    properties: {source: _/theme/Screenshot 2024-05-21 at 5.14.45 PM.png, display_mode: fill_width}
-    type: Image
-    layout_properties: {grid_position: 'PULZXS,GXOQNP'}
-    event_bindings: {show: image_1_show}
-    data_bindings: []
   - name: button_2
     properties: {text: camera, icon: 'fa:video-camera'}
     type: Button
@@ -33,6 +27,11 @@ components:
     type: TextBox
     layout_properties: {grid_position: 'EKPZOT,HCXROK'}
     event_bindings: {pressed_enter: text_box_1_pressed_enter}
+  - name: image_1
+    properties: {source: _/theme/Screenshot 2024-05-21 at 5.14.45 PM.png}
+    type: Image
+    layout_properties: {grid_position: 'UCTDYD,LWPTSO'}
+    event_bindings: {show: image_1_show, hide: image_1_hide}
 - name: label_1
   properties: {text: Demo-tool}
   type: Label

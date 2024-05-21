@@ -9,6 +9,11 @@ components:
   properties: {background: 'theme:Primary', border: '', tooltip: ''}
   name: content_panel
   layout_properties: {slot: sdfgdsfg}
+  components:
+  - name: image_1
+    properties: {}
+    type: Image
+    layout_properties: {grid_position: 'NNOOUZ,WHLPWV'}
 - type: FlowPanel
   properties: {}
   name: navbar_links

@@ -9,19 +9,20 @@ class Form1(Form1Template):
     self.init_components(**properties)
 
     # Display inital image 
-    self.image_element = anvil.js.window.document.createElement("img")
-    self.image_element.src = "_/theme/Screenshot 2024-05-21 at 5.14.45 PM.png"
-    self.image_element.setAttribute("width", "640")
-    self.image_element.setAttribute("height", "480")
-    self.image_element.style.display = "block"
-    anvil.js.window.document.body.appendChild(self.image_element)
+    # self.image_element = anvil.js.window.document.createElement("img")
+    # self.image_element.src = "_/theme/Screenshot 2024-05-21 at 5.14.45 PM.png"
+    # self.image_element.setAttribute("width", "640")
+    # self.image_element.setAttribute("height", "480")
+    # self.image_element.style.display = "block"
+    # anvil.js.window.document.body.appendChild(self.image_element)
     
     # Any code you write here will run before the form opens.
     self.video = anvil.js.window.document.createElement('video')
     self.video.setAttribute("autoplay", "true")
     self.video.setAttribute("width", "640")
     self.video.setAttribute("height", "480")
-    anvil.js.window.document.body.appendChild(self.video)
+    # anvil.js.window.document.body.appendChild(self.video)
+    anvil.js.window.document.getElementById(self.image_1.dom_node.id).appendChild(self.video_element)
         # Create a canvas element for capturing images
     self.canvas = anvil.js.window.document.createElement("canvas")
     self.canvas.setAttribute("width", "640")
@@ -29,10 +30,6 @@ class Form1(Form1Template):
     self.canvas.style.display = "none"  # Hide the canvas element
     anvil.js.window.document.body.appendChild(self.canvas)
   
-  def image_1_show(self, **event_args):
-    """This method is called when the Image is shown on the screen"""
-    
-    pass
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -48,7 +45,9 @@ class Form1(Form1Template):
     img.src = canvas.toDataURL('image/png');
     document.body.appendChild(img);
     """
-    anvil.js.window.eval(js_code)
+    captured_image = anvil.js.window.eval(js_code)
+    from ..Form2 import Form2
+    open_form(Form2(captured_image))
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -66,5 +65,11 @@ class Form1(Form1Template):
       });
     """
     anvil.js.window.eval(js_code)
-    from .Form2 import Form2
-    open_form(Form2(captured_image))
+
+  def image_1_show(self, **event_args):
+    """This method is called when the Image is shown on the screen"""
+    pass
+
+  def image_1_hide(self, **event_args):
+    """This method is called when the Image is removed from the screen"""
+    pass
